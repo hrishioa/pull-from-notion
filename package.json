@@ -1,11 +1,11 @@
 {
-  "name": "notion-comments-exporter",
+  "name": "pull-from-notion",
   "module": "src/index.js",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
-    "notion-comments-exporter": "dist/index.js"
+    "pull-from-notion": "dist/index.js"
   },
   "files": [
     "dist"
@@ -14,15 +14,13 @@
     "build": "tsup src/index.ts --format cjs,esm --dts"
   },
   "devDependencies": {
-    "bun-types": "latest"
-  },
-  "peerDependencies": {
+    "@types/cli-progress": "^3.11.6",
+    "@types/inquirer": "^9.0.9",
+    "bun-types": "latest",
     "typescript": "^5.0.0"
   },
   "dependencies": {
     "@notionhq/client": "^5.3.0",
-    "@types/cli-progress": "^3.11.6",
-    "@types/inquirer": "^9.0.9",
     "cli-progress": "^3.12.0",
     "commander": "^14.0.1",
     "dotenv": "^17.2.3",
