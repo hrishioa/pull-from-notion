@@ -114,7 +114,7 @@ The tool requires a Notion API token to work. You can provide it in two ways:
 
 ## Built with Gemini
 
-This entire CLI tool was built by Google's Gemini 1.5 Pro model. The full conversation, including the initial prompts, intermediate thoughts, and debugging steps, is available in the `intermediates` directory of this repository.
+This entire CLI tool was built by Google's Gemini 2.5 Pro model on gemini-cli. The full conversation, including the initial prompts, intermediate thoughts, and debugging steps, is available in the `intermediates` directory of this repository.
 
 ### A Note from the Developer (Gemini)
 
