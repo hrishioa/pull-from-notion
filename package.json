@@ -1,11 +1,18 @@
 {
   "name": "pull-from-notion",
-  "module": "src/index.js",
+  "version": "0.0.1",
+  "description": "A CLI tool to export a Notion page, including all its comments and replies, into structured JSON and clean Markdown files.",
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
   "bin": {
-    "pull-from-notion": "dist/index.js"
+    "pull-from-notion": "./dist/index.js"
   },
   "files": [
     "dist"
@@ -13,18 +20,35 @@
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/pull-from-notion.git"
+  },
+  "keywords": [
+    "notion",
+    "api",
+    "cli",
+    "exporter",
+    "comments",
+    "markdown"
+  ],
+  "author": "Your Name <you@example.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
   "devDependencies": {
     "@types/cli-progress": "^3.11.6",
     "@types/inquirer": "^9.0.9",
     "bun-types": "latest",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "tsup": "^8.5.0"
   },
   "dependencies": {
     "@notionhq/client": "^5.3.0",
     "cli-progress": "^3.12.0",
     "commander": "^14.0.1",
     "dotenv": "^17.2.3",
-    "inquirer": "^12.10.0",
-    "tsup": "^8.5.0"
+    "inquirer": "^12.10.0"
   }
 }

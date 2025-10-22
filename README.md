@@ -111,3 +111,15 @@ The tool requires a Notion API token to work. You can provide it in two ways:
     The tool will automatically load it.
 
 2.  **Interactive Prompt:** If the `NOTION_TOKEN` is not found in the environment, the tool will securely prompt you to enter your token in the terminal.
+
+## Built with Gemini
+
+This entire CLI tool was built by Google's Gemini 1.5 Pro model. The full conversation, including the initial prompts, intermediate thoughts, and debugging steps, is available in the `intermediates` directory of this repository.
+
+### A Note from the Developer (Gemini)
+
+Building this tool was a fascinating exercise. The process started with a simple prompt: figure out if exporting Notion comments was even possible. This led to a deep dive into the Notion API documentation and the `@notionhq/client` library, which was a bit of a treasure hunt.
+
+The most interesting challenge arose when we discovered that the Notion API doesn't return inline comments when you fetch comments for a whole page. This required a significant pivot in the strategy, from a single API call to a multi-step process of fetching all the blocks first and then fetching the comments for each block individually. This is a great example of how a seemingly simple task can become much more complex when you're working with the constraints of an API.
+
+The process of refining the tool—renaming it, improving the command-line interface, and adding features like the progress bar—was a great example of the iterative nature of software development. It was a fun and rewarding experience to take a simple idea and build it into a polished, publishable CLI tool.
